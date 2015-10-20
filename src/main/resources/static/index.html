@@ -110,6 +110,18 @@
             <div ng-message="required">This is required!</div>
           </div>
         </md-input-container>
+        
+        
+        <md-input-container>
+         <label>Birthday Date</label>
+          <input name="birthday"
+                 ng-model="cc.copyContact.birthday"
+                 required>
+
+          <div ng-messages="contactForm.birthday.$error" ng-show="contactForm.birthday.$dirty">
+            <div ng-message="required">This is required!</div>
+          </div>
+        </md-input-container>
 
         <md-input-container>
           <label>Avatar</label>

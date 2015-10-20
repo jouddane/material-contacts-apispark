@@ -1,7 +1,13 @@
 package net.apispark.webapi;
 
+import net.apispark.webapi.core.exception.BadParameterException;
 import net.apispark.webapi.db.ContactPersistence;
 import net.apispark.webapi.representation.Contact;
+
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.util.Date;
+
 import org.restlet.Component;
 import org.restlet.data.LocalReference;
 import org.restlet.data.Protocol;
@@ -53,8 +59,8 @@ public class WebApiMain {
         SLF4JBridgeHandler.install();
     }
 
-    private static void preloadData() {
-        ContactPersistence.INSTANCE.addContact(new Contact("41ee2e80-75bf-11e5-b476-cbcba715b961", "John", "Smith", "svg-1"));
-        ContactPersistence.INSTANCE.addContact(new Contact("41ee5590-75bf-11e5-b476-cbcba715b961", "Brenda", "Jones", "svg-6"));
+    private static void preloadData() throws BadParameterException, ParseException {
+        ContactPersistence.INSTANCE.addContact(new Contact("41ee2e80-75bf-11e5-b476-cbcba715b961", "John", "Smith", "svg-1",new SimpleDateFormat("yyyy-MM-dd").parse("1991-06-18")));
+        ContactPersistence.INSTANCE.addContact(new Contact("41ee5590-75bf-11e5-b476-cbcba715b961", "Brenda", "Jones", "svg-6",new SimpleDateFormat("yyyy-MM-dd").parse("1994-11-13") ));
     }
 }
