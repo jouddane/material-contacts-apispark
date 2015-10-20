@@ -122,6 +122,17 @@
             </md-option>
           </md-select>
         </md-input-container>
+        
+        <md-input-container>
+          <label>Gender</label>
+          <md-select ng-model="cc.copyContact.gender"
+                   ng-disabled="cc.isAsyncInProgress">
+            <md-option ng-value="gender.value"
+                     ng-repeat="gender in cc.genders">
+              {{ gender.label }}
+            </md-option>
+          </md-select>
+        </md-input-container>
 
         <section layout="row" layout-align="left center" style="margin-top: 40px;">
 
