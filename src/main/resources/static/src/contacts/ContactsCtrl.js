@@ -28,6 +28,11 @@ angular.module('starterApp')
       { label: 'Dog', value: 'svg-10' },
       { label: 'Cat', value: 'svg-11' }
     ];
+    
+    self.genders = [
+      {label: 'Male', value: 'MALE'},
+      {label: 'Female', value: 'FEMALE'}
+    ];
 
     function fetchContacts (ctrl) {
 
