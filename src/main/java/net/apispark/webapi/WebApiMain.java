@@ -2,6 +2,8 @@ package net.apispark.webapi;
 
 import net.apispark.webapi.db.ContactPersistence;
 import net.apispark.webapi.representation.Contact;
+import net.apispark.webapi.representation.Gender;
+
 import org.restlet.Component;
 import org.restlet.data.LocalReference;
 import org.restlet.data.Protocol;
@@ -54,7 +56,7 @@ public class WebApiMain {
     }
 
     private static void preloadData() {
-        ContactPersistence.INSTANCE.addContact(new Contact("41ee2e80-75bf-11e5-b476-cbcba715b961", "John", "Smith", "svg-1"));
-        ContactPersistence.INSTANCE.addContact(new Contact("41ee5590-75bf-11e5-b476-cbcba715b961", "Brenda", "Jones", "svg-6"));
+        ContactPersistence.INSTANCE.addContact(new Contact("41ee2e80-75bf-11e5-b476-cbcba715b961", "John", "Smith", "svg-1", Gender.MALE));
+        ContactPersistence.INSTANCE.addContact(new Contact("41ee5590-75bf-11e5-b476-cbcba715b961", "Brenda", "Jones", "svg-6", Gender.FEMALE));
     }
 }
