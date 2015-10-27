@@ -20,10 +20,10 @@ public class ContactPersistenceTest {
 	@Test
 	public void GetContactWithId(){
 		Contact c = new Contact(null, "Micaelle", "Mbagira", "svg-6", Gender.FEMALE);
-		c=ContactPersistence.INSTANCE.addContact(c);
-		Contact d = new Contact();
-		d=ContactPersistence.INSTANCE.getContact(c.getId());
-		equals(d.getId()==c.getId());
+		Contact updatedcontact=ContactPersistence.INSTANCE.addContact(c);
+	
+		Contact d=ContactPersistence.INSTANCE.getContact(c.getId());
+		assertEquals(c.getId(), d.getId());
 		
 	}
 }
